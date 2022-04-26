@@ -6,7 +6,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<title>Gastronomia</title>
 </head>
-<body style="background: url(src/vidrio.jpg);">
+<body style="background: url(src/rojo.jpg);">
 
 	<!-- Barra superior -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-success p-1 text-dark bg-opacity-75">
@@ -41,14 +41,14 @@
 	</nav>
 
 	<div>
-		<center><h1>Gastronomía</h1></center>
+		<center><h1>Turismo</h1></center>
 	</div>
 
 	<!-- Tarjetas -->
 	<br>
 	<?php for ($i=0;$i < 6; $i++): ?>
 		<div class="container">
-			<div class="card mb-3 bg-success p-1 text-dark bg-opacity-25">
+			<div class="card mb-3 bg-warning p-1 text-dark bg-opacity-25">
 			  <div class="row g-0">
 			    <div class="col-md-4">
 			      <img src="src/rect.png" class="img-fluid rounded-start" style="width: 300px; height: 125px;">
