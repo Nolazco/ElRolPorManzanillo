@@ -35,18 +35,36 @@
 		</div>
 	</nav>
 	<br>
-	<?php for ($i=0;$i < 6; $i++): ?>
+	<?php for ($i=1;$i <= 7; $i++): ?>
 		<div class="container">
 			<div class="card mb-3 bg-success p-1 text-dark bg-opacity-25">
 			  <div class="row g-0">
 			    <div class="col-md-4">
-			      <img src="src/rect.png" class="img-fluid rounded-start" style="width: 300px; height: 125px;">
+    <?php
+                    include('conexion.php');
+                    //Hacemos la consulta de nuestro codigo sql 
+        $obtencion = "SELECT title,categoria,inf_blog,img_blog,date_created FROM publicaciones WHERE categoria = 'opt2' ";
+        //usamos el mysqli_query donde enviamos nuestra conexion y enviamos la consuta
+        $resultado = mysqli_query($mysqli,$obtencion);
+		
+        while($consulta = mysqli_fetch_array($resultado))
+            {
+                $titulo = $consulta['title'];
+                $categoria =$consulta['categoria'];
+                $inf_blog =$consulta['inf_blog'];
+                $img_blog =$consulta['img_blog'];
+                $fecha =$consulta['date_created'];
+                
+            }
+    
+    ?>
+			      <img src='archivos/<?php echo $img_blog?>' class="img-fluid rounded-start" style="width: 300px; height: 125px;">
 			    </div>
 			    <div class="col-md-8">
 			      <div class="card-body">
-			        <h5 class="card-title">Restaurante</h5>
-			        <p class="card-text">Aqui irá un pequeño resumen de la nota</p>
-			        <p class="card-text"><small>Aqui irá la fecha de subida</small></p>
+			        <h5 class="card-title"><?php echo $titulo?></h5>
+			        <p class="card-text"><?php echo $inf_blog?></p>
+			        <p class="card-text"><small><?php echo $fecha?></small></p>
 			      </div>
 			    </div>
 			  </div>
