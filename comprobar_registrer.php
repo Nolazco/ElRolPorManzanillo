@@ -1,5 +1,5 @@
 <html>
-
+<meta http-equiv="refresh" content="1;url=index_1.php">
 <head>
 
 <body>
@@ -9,9 +9,9 @@ $userR = $_POST['nameR_user'];
 $correoR = $_POST['correoR_user'];
 $telefonoR = $_POST['telefonoR_user'];
 $passwordR = $_POST['passwR_user'];
-
-
-
+$salt = "invalid";
+$contraseñaful = md5($salt.$passwordR);
+echo $contraseñaful;
 //llamamos a la conexion de base datos
 include('conexion.php');
 
@@ -33,7 +33,7 @@ $cont=0;
    
         if($cont == 0)
         {
-            if (!$mysqli->query("INSERT INTO `datos_user` (`id_user`,`nameR_user`,`correo_user`,`telefono_user`,`passw_user`) VALUES ('', '$userR','$correoR','$telefonoR',md5('$passwordR'))")) {
+            if (!$mysqli->query("INSERT INTO `datos_user` (`id_user`,`nameR_user`,`correo_user`,`telefono_user`,`passw_user`) VALUES ('', '$userR','$correoR','$telefonoR','$contraseñaful')")) {
     
                 echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
              }else{

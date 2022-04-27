@@ -11,7 +11,7 @@
 		<div class="container-fluid">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="index_1.html">Inicio</a>
 					</li>
 					<li class="nav-item">
@@ -40,7 +40,7 @@
 		<?php
                     include('conexion.php');
                     //Hacemos la consulta de nuestro codigo sql 
-        $obtencion = "SELECT title,categoria,inf_blog,img_blog,date_created FROM publicaciones WHERE  id_publicacion = '$i' AND categoria = 'opt2' ";
+        $obtencion = "SELECT title,categoria,inf_blog,img_blog,date_created FROM publicaciones WHERE  id_publicacion = '$i' AND categoria = 'opt1' ";
         //usamos el mysqli_query donde enviamos nuestra conexion y enviamos la consuta
         $resultado = mysqli_query($mysqli,$obtencion);
 		

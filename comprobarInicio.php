@@ -4,32 +4,38 @@
 
 <body>
 <?php
-
+$salt = "invalid";
 $userC = $_POST['name_user'];
-$passwordC = md5($_POST['passw_user']);
-
+$passwordC = $_POST['passw_user'];
+$contraseñaful = md5($salt.$passwordC);
 
 
 //llamamos a la conexion de base datos
 include('conexion.php');
 //Hacemos la consulta de nuestro codigo sql 
-$consutaInicio = "SELECT passw_user FROM datos_user WHERE  nameR_user = '$userC'";
+$consutaInicio = "SELECT * FROM datos_user WHERE  nameR_user = '$userC' AND passw_user = '$contraseñaful'";
 //usamos el mysqli_query donde enviamos nuestra conexion y enviamos la consuta
 $resultado = mysqli_query($mysqli,$consutaInicio);
-$passwordBaseDatos;
-    while($consulta = mysqli_fetch_array($resultado))
-    {
-        
-        
-        $passwordBaseDatos = $consulta['passw_user'];
-    }
+$inicio = mysqli_num_rows($resultado);
+
+if($inicio == 1)
+{
+	//header("Location: pagina.html")
+    ?>
+    <meta http-equiv="refresh" content="1;url=index_1.html">
+    <?php
+	echo "Bienvenido:";
+}
+else if ($inicio == 0) 
+{
+    ?>
     
-    if($passwordC == $passwordBaseDatos)
-    {
-        echo "Bienvenido a EL ROL POR MANZANILLO";
-    }else{
-        echo "Contraseña o Usuario Incorrecto!!";
-    }
+    <?php
+	echo "<script> alert('Error: Revise sus datos ingresados');window.location= 'login.html' </script>";
+}
+
+    
+
 
 
 
