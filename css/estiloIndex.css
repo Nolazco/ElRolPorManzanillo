@@ -3,15 +3,25 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
     padding: 0;
     margin: 0;
 }
+body{
+    background-image: url(/src/playa.jpg);
+    background-size: cover;
+}
 
+.cont-texto{
+    background-color: #A5884580;
+    width: 90%;
+    height: 90%;
+}
 .texto{
+
     color: white;
     text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .articulos-texto {
@@ -19,12 +29,18 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
     padding-bottom: 10px;
 }
 
+.articulos-container{
+    width: fit-content;
+    margin: auto;
+}
+
 .articulos-container a{
-    display: block;
+    display: inline-block;
     background-size: cover;
     width: 256px;
     height: 144px;
-    margin: 20px auto;
+    margin: 20px;
+
 }
 
 .camarones {
@@ -44,9 +60,11 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
     flex-direction: column;
     justify-content: center;
     transition: opacity 0.30s;
+    
 }
 
 .articulos-container a {
+    margin-right: 1em;
     text-decoration: none;
     color: #fff;
     box-shadow: 0px 0px 9px #000c;
