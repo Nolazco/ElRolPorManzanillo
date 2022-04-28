@@ -46,10 +46,10 @@
     <title>Registrarse</title>
 </head>
 
-<body class="container" style="background-color: #97E59A;">
+<body class="container" style="background-color: #BEE3DF;">
     <center>
-        <div class="formulario">
-            <div class="fs-1" style="text-align: left;"><a href="index.html"><i class="bi bi-house-door"></i></a></div>
+        <div class="formulario mt-2 mb-2" style="background: #F1EAC9">
+            <div class="fs-1" style="text-align: left; text-decoration: none;"><a href="index.html"><i class="bi bi-house-door-fill"></i><i class="bi bi-arrow-left"></i></a></div>
             <img class="img-fluid d-block mx-auto mt-1" style="width: 17pc" src="src/logo.png"><br>
             <form action="comprobar_registrer.php" method="post">
 

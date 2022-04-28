@@ -1,33 +1,29 @@
 <html>
-
+<meta http-equiv="refresh" content="1;url=newblog.php">
 <head>
-
+</head>
 <body>
 <?php
 
 $titulo = $_POST['titulo'];
 $categoria = $_POST['categoria'];
 $inf = $_POST['informacion'];
+if($categoria == 'op1'){
+    echo "Ingrese la categoria de su publicacion";
+}else{
 
 //guardar imagen en la carpeta
-
 $name_img = $_FILES['imagen']['name'];//guardo el nombre de la img
 $guardar_img = $_FILES['imagen']['tmp_name'];
-
-
-
-
+//obtenemos la fecha actual
+$fecha = date('Y-m-d');
+$res =  $_POST['resumen'];
 
 //llamamos a la conexion de base datos
 include('conexion.php');
 
-
-
-
-    
-
 //Generamos una insercion
-if (!$mysqli->query("INSERT INTO `publicaciones` (`id_publicacion`,`title`,`categoria`,`ìnf_blog`,`img_blog`,`date_created`) VALUES ('', '$titulo', '$categoria','$inf','$name_img','')")) {
+if (!$mysqli->query("INSERT INTO `publicaciones` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res')")) {
     
     echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
 }else
@@ -50,12 +46,8 @@ if (!$mysqli->query("INSERT INTO `publicaciones` (`id_publicacion`,`title`,`cate
     }
     echo "<br/>"; echo "Registro agregado correctamente"; }
 
-
+}
 ?>
 
 </body>
-
-
-</head>
-
 </html>

@@ -1,9 +1,13 @@
 .formulario{
-	border: 10px solid #085A0B;
+	border: 10px solid #665C5C;
 	padding: 10px;
 	border-radius: 10px;
 	width: 70%;
 	text-align: left;
+}
+
+.casa{
+  text-decoration: none;
 }
 
 .boton1{

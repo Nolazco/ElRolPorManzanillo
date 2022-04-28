@@ -4,7 +4,19 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
     margin: 0;
 }
 
+body{
+    background-image: url(/src/playa.jpg);
+    background-size: cover;
+}
+.cont-texto{
+    background-color: #A5884580;
+    width: 90%;
+    height: 90%;
+    border-radius: 17px;
+}
+
 .texto{
+    padding: 12px;
     color: white;
     text-shadow:
     -1px -1px 0 #000,
@@ -19,20 +31,17 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
     padding-bottom: 10px;
 }
 
+.articulos-container{
+    width: fit-content;
+    margin: auto;
+}
+
 .articulos-container a{
-    display: block;
+    display: inline-block;
     background-size: cover;
     width: 256px;
     height: 144px;
-    margin: 20px auto;
-}
-
-.camarones {
-    background: url("../src/camarones.jpg");
-}
-
-.mar {
-    background: url("../src/mar.jpg");
+    margin: 20px;
 }
 
 .articulo-data {
@@ -64,4 +73,12 @@ body,div,ul,nav,h1,h2,h3,header,li,a {
 
 .articulo-data:hover {
     opacity: 0;
+}
+
+.camarones {
+    background: url("../src/camarones.jpg");
+}
+
+.mar {
+    background: url("../src/mar.jpg");
 }
