@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/generales.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
@@ -50,33 +50,37 @@
     <center>
         <div class="formulario mt-2 mb-2" style="background: #F1EAC9">
             <div class="fs-1" style="text-align: left; text-decoration: none;"><a href="index.html"><i class="bi bi-house-door-fill"></i><i class="bi bi-arrow-left"></i></a></div>
-            <img class="img-fluid d-block mx-auto mt-1" style="width: 17pc" src="src/logo.png"><br>
-            <form action="comprobar_registrer.php" method="post">
+            <div style="padding: 30px;">
+                <img class="img-fluid d-block mx-auto mt-1" style="width: 17pc" src="src/logo.png"><br>
+                <form action="comprobar_registrer.php" method="post">
 
-              <div class="mb-3">
-                <label class="form-label fw-bold">Usuario <i class="bi bi-person-fill"></i>:</label>
-                <input type="text" class="form-control" name="nameR_user" onkeypress="return SoloLetras(event);" required>
-              </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Usuario <i class="bi bi-person-fill"></i>:</label>
+                    <input type="text" class="form-control" name="nameR_user" onkeypress="return SoloLetras(event);" required>
+                  </div>
 
-              <div class="mb-3">
-                  <label class="form-label fw-bold">Telefono <i class="bi bi-phone-fill"></i>:</label>
-                  <input type="tel" class="form-control" maxlength="10" name="telefonoR_user" onkeypress="return valideKey(event);">
-              </div>
+                  <div class="mb-3">
+                      <label class="form-label fw-bold">Telefono <i class="bi bi-phone-fill"></i>:</label>
+                      <input type="tel" class="form-control" maxlength="10" name="telefonoR_user" onkeypress="return valideKey(event);">
+                  </div>
 
-              <div class="mb-3">
-                  <label class="form-label fw-bold">Correo electronico <i class="bi bi-envelope-fill"></i>:</label>
-                  <input type="email" class="form-control" name="correoR_user">
-              </div>
+                  <div class="mb-3">
+                      <label class="form-label fw-bold">Correo electronico <i class="bi bi-envelope-fill"></i>:</label>
+                      <input type="email" class="form-control" name="correoR_user">
+                  </div>
 
-              <div class="mb-3">
-                <label class="form-label fw-bold">Contraseña <i class="bi bi-key-fill"></i>:</label>
-                <input type="password" class="form-control" name="passw_user">
-                <a href="recuperarContraseña.php"><div class="form-text">¿Olvidaste tu contraseña?</div></a>
-              </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Contraseña <i class="bi bi-key-fill"></i>:</label>
+                    <input type="password" class="form-control" name="passwR_user">
+                    <a href="recuperarContraseña.php"><div class="form-text">¿Olvidaste tu contraseña?</div></a>
+                  </div>
 
-              <center><a class="boton1" type="submit" role="button" href="comprobar_registrer.php">Registrarse <i class="bi bi-arrow-right"></i></a></center>
-              <div class="form-text fs-6 fw-bold">¿Ya tienes cuenta? <a href="login.html">Click aqui</a></div>
-            </form>
+                  <center>
+                    <input class="boton1" type="submit" value="Registrarse">
+                  </center>
+                  <div class="form-text fs-6 fw-bold">¿Ya tienes cuenta? <a href="login.html">Click aqui</a></div>
+                </form>
+            </div>
         </div>
     </center>
 </body>

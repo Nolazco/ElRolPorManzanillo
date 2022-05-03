@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 	<title>Turismo</title>
 </head>
@@ -44,47 +44,38 @@
   </nav>
 </header>
 
-<body style="background: url(src/ramada.jpg); background-size: cover;">
+<body style="background: url(../src/azul.jpeg); background-size: cover;">
 	<div class="mt-5">
 		<center><h1>Turismo</h1></center>
 	</div>
 
-  <?php for ($i=1;$i <= 15; $i++): ?>
-    <?php
-      include('conexion.php'); //Hacemos la consulta de nuestro codigo sql 
-      $obtencion = "SELECT title, categoria, inf_blog, img_blog, date_created, resumen_blog FROM publicaciones WHERE  id_publicacion = '$i' AND categoria = 'opt1'";
-      //usamos el mysqli_query donde enviamos nuestra conexion y enviamos la consuta
-      $resultado = mysqli_query($mysqli,$obtencion);
-    
-      while($consulta = mysqli_fetch_array($resultado)){
-        $titulo = $consulta['title'];
-        $categoria =$consulta['categoria'];
-        $inf_blog =$consulta['inf_blog'];
-        $img_blog =$consulta['img_blog'];
-        $fecha =$consulta['date_created'];
-        $res = $consulta['resumen_blog'];
-        ?>
+  <?php
+    include('conexion.php'); //Hacemos la consulta de nuestro codigo sql 
+    $obtencion = "SELECT * FROM publicaciones WHERE categoria = 'opt1'";
+    $resultado = mysqli_query($mysqli,$obtencion);
+    $publicaciones = $resultado->fetch_all(MYSQLI_ASSOC);
+  ?>
 
+  
+  <?php foreach($publicaciones as $publicacion): ?>
         <div class="container">
-          <div class="card mb-3 bg-white p-1 text-dark bg-opacity-25">
+          <div class="card mb-3 bg-primary p-1 text-dark bg-opacity-10">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src='archivos/<?php echo $img_blog?>' class="img-fluid rounded-start" style="width: 300px; height: 125px;">
+                <img src='archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 14pc; margin-left: 80px;">
               </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title"><?php echo $titulo?></h5>
-                <p class="card-text"><?php echo $res?></p>
-                <p class="card-text"><small><?php echo $fecha?></small></p>
+                <h5 class="card-title"><?= $publicacion['title'] ?></h5>
+                <p class="card-text"><?= $publicacion['inf_blog'] ?>...</p>
+                <p class="card-text"><small><?= $publicacion['date_created'] ?></small></p>
+                <a class="btn btn-outline-primary" href="#" role="button"><i class="bi bi-info-circle"></i> Ver más...</a>
               </div>
             </div>
             </div>
           </div>
         </div>
-    <?php
-    }
-  ?>  
-  <?php endfor ?>
+  <?php endforeach ?>
 	<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -20,14 +20,11 @@
     if($inicio == 1){
         //header("Location: pagina.html")
         ?>
-        <meta http-equiv="refresh" content="1;url=index_1.html">
+        <meta http-equiv="refresh" content="1;url=index.html">
         <?php
-        echo "Bienvenido:";
+        echo "Bienvenido: $userC";
     }else if ($inicio == 0) 
     {
-        ?>
-
-        <?php
 
         echo "<script>alert('Error: Revise sus datos ingresados');window.location='login.html'</script>";
     }
