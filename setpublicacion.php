@@ -1,9 +1,11 @@
-<html>
-<meta http-equiv="refresh" content="1;url=newblog.php">
-<head>
-</head>
-<body>
 <?php
+
+session_start();
+
+if(!isset($_SESSION['nameR_user'])){
+    header("Location: login.php");
+}
+$nombre = $_SESSION['nameR_user'];
 
 $titulo = $_POST['titulo'];
 $categoria = $_POST['categoria'];
@@ -23,9 +25,10 @@ $res =  $_POST['resumen'];
 include('conexion.php');
 
 //Generamos una insercion
-if (!$mysqli->query("INSERT INTO `publicaciones` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res')")) {
+if (!$mysqli->query("INSERT INTO `publicaciones` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`,`autor_blog`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res', '$nombre')")) {
     
     echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
+    header("Location: controlPublicaciones.php");
 }else
 { 
     if(!file_exists('archivos')){//creamos una carpeta y le damos permisos si el archivo es cargado
@@ -35,6 +38,7 @@ if (!$mysqli->query("INSERT INTO `publicaciones` (`title`,`categoria`,`inf_blog`
                 echo "Archivo Guardado con Exito";
             }else{
                 echo "Archivo fallido";
+                header("Location: controlPublicaciones.php");
             }
         }
     }else{
@@ -42,12 +46,12 @@ if (!$mysqli->query("INSERT INTO `publicaciones` (`title`,`categoria`,`inf_blog`
             echo "Archivo Guardado con Exito";
         }else{
             echo "Archivo fallido";
+            header("Location: controlPublicaciones.php");
+
         }
     }
     echo "<br/>"; echo "Registro agregado correctamente"; }
+    header("Location: controlPublicaciones.php");
 
 }
 ?>
-
-</body>
-</html>
