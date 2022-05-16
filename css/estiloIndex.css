@@ -1,4 +1,4 @@
-body,div,ul,nav,h1,h2,h3,header,li,a {
+*{
     box-sizing:  border-box;
     padding: 0;
     margin: 0;
@@ -9,7 +9,7 @@ body{
     background-size: cover;
 }
 .cont-texto{
-    background-color: #A5884580;
+    background-color: #00000080;
     width: 90%;
     height: 90%;
     border-radius: 17px;
@@ -18,11 +18,6 @@ body{
 .texto{
     padding: 12px;
     color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
     font-size: 40px;
 }
 

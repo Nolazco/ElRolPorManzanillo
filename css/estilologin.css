@@ -1,0 +1,65 @@
+/*Login & register*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  font-family: 'Assistant', sans-serif;
+}
+
+body{
+  background-image: url(../src/hadas.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  padding: 20px;
+  margin: auto;margin-top:120px;
+}
+
+.container_todo{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.back_container{
+width: 100%;
+padding: 10px 20px;
+display: flex;
+justify-content:center;
+backdrop-filter: blur(5px);
+background-color: #EEBC6980;
+}
+
+.back_container div{
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+}
+
+.back_container div p, div button{
+  margin-top: 20px;
+}
+
+.back_container h3{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.back_container button{
+  padding: 10px 30px;
+  border: 2px solid #fff;
+  background: transparent;
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+  cursor:pointer;
+  outline: none;
+}
+.front_container{
+   width: 100%;
+   padding: 80px 20px;
+   background-color: white;
+}
