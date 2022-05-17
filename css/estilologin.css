@@ -86,3 +86,79 @@ border-radius: 10px;
    position: absolute;
   border-radius: 10px;
 }
+.front_container form h2{
+text-align: center;
+font-size: 20px;
+margin: bottom 20px;
+color:#EEBC45;
+}
+
+.front_container form input{
+width: 100%;
+margin-top: 20px;
+padding: 10px;
+border: none;
+background: #EEBC6940;
+font-size:16px;
+outline: none;
+}
+
+.front_container form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border: none;
+  font-size: 18px;
+  background: #EEBC69;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.form_login{
+  opacity: 1;
+  display: block;
+}
+
+.form_register{
+  display: none; 
+}
+
+/*Resolucion*/
+
+@media screen and (max-width:850px){
+  main {
+    margin: top 50px;
+  }
+  .back_container {
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+  }
+  .back_container div {
+    margin: 0;
+    position: absolute;
+    }
+
+    /*Formularios*/
+
+    .front_container{
+      top: -10px;
+      left: -5px;
+      margin: auto;
+    }
+    .front_container form{
+      position: relative;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
