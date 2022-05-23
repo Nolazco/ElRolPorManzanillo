@@ -1,6 +1,1 @@
-
-archivos/playa.jpg
-archivos/ramada.jpg
-archivos/restaurante.jpg
-*.jpg
-*.png
+archivos/*

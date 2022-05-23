@@ -1,0 +1,31 @@
+.formulario{
+	border: 10px solid #665C5C;
+	padding: 10px;
+	border-radius: 10px;
+	width: 70%;
+	text-align: left;
+}
+
+.casa{
+  text-decoration: none;
+}
+
+.boton1{
+    text-decoration: none;
+    display:inline-block;
+    width:80%;
+    padding:20px;
+    border: 3px solid black;
+    border-radius:50px;
+    color:black;
+    font-weight: bold;
+    transition: all 0.9s;
+    text-align: center;
+    font-size: 100%;
+  }
+
+  .boton1:hover{
+    background:black;
+    color:white;
+
+  }

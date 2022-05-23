@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'open sans';
+    background-color: #f7f2eb;
+}
+
+.contenedor{
+    padding: 0px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.titulo {
+    color:darkgreen;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 8px;
+}
+/*header*/
+header{
+    width: 100%;
+    height: 600px;
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit- linear-gradient(to right, hsla(231, 46%, 27%, 0.473), hsla(17, 69%, 48%, 0.486)),url(/src/img/portada.jpg);;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(231, 46%, 27%, 0.473), hsla(17, 69%, 48%, 0.486)),url(/src/img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.gastronomia {
+    width: 100%;
+    height: 600px;
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit- linear-gradient(to right, hsla(231, 46%, 27%, 0.473), hsla(17, 69%, 48%, 0.486)),url(/src/img/gastro1.jpg);;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(231, 46%, 27%, 0.473), hsla(17, 69%, 48%, 0.486)),url(/src/img/gastro1.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.turismo {
+    width: 100%;
+    height: 600px;
+    background: #1A2980;  /* fallback for old browsers */
+    background: -webkit- linear-gradient(to right, hsla(231, 55%, 68%, 0.473), hsla(236, 73%, 47%, 0.486)),url(/src/img/palma.jpg);;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsla(231, 55%, 68%, 0.473), hsla(236, 73%, 47%, 0.486)),url(/src/img/palma.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+nav > a{
+    color: #fff ;
+    font-weight: 700; /*hace mas ligera la fuente*/
+    text-decoration: none;/*Le quita el subrayado*/
+    margin-left: 25px;/*separa las palabras una de otra*/
+    /*text-align: right;*/
+    /*font-size: large;*/
+    justify-content:space-between;
+}
+.navegacion-principal a:hover{
+    text-decoration: none;
+    background-color: #32aaaa;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+}
+.navegacion-principal-gastronomia a:hover{
+    text-decoration: none;
+    background-color: #d6bc99;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+}
+.navegacion-principal-turismo a:hover{
+    text-decoration: none;
+    background-color: #2220aa;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+}
+header .textos-header{
+    display: flex;
+    height: 400px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.textos-header h1{
+    font-size: 30px;
+    color: #fff;
+
+}
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 700;
+    color: #E8F6EF;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.contenedor-sobre-nosotros {
+    display: flex;
+    justify-content: space-evenly;
+}
+.imagen-sobrenosotros{
+    width: fit-content;
+    position:relative;
+}
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+.contenido-textos h3 span{
+    background: green;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 5);
+    margin-right: 5px;
+}
+
+.circulo{
+    background: green;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 5);
+    margin-right: 5px;
+}
+
+.contenido-textos p{
+    padding: 0px 15px 30px 15px;
+    font-weight: 300;
+    text-align: justify;
+}
+.manzanilloo{
+    background-color: #EEE6CE;
+}
+.manzanilloo > iframe{
+    padding: 0px 0px 10px 380px;
+    justify-content: center;
+}
+/*opc*/
+.opciones {
+    background: #f7f2eb;
+  }
+.galeria-opc {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.imagen-opc > img {
+    max-width: 200px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+}
+.imagen-opc {
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 5);
+}
+.imagen-opc > img {
+    max-width: 500px;
+    max-height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hover-galeria {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(56, 47%, 60%, 0.486);
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.hover-galeria p{
+    font-weight: 700;
+}
+.hover-galeria img {
+    width: 50px;
+}
+.imagen-opc:hover .hover-galeria {
+    transform: scale(1);
+}
+.tam-texto {
+    font-size: 23px;
+}
+.tam-texto-man {
+    text-align: center;
+    font-size: 23px;
+    padding: 20px 70px 0px 70px;
+    justify-content: center;
+    width: 95%;
+}
+
+footer{
+    width: 100%; padding: 50px 0px;
+    background-image: url(/src/img/background-footer.svg);
+    background-size: cover;
+    background-color: #E4E9BE;
+    -webkit-mask-image: url("/src/img/background-footer.svg");
+    mask-image: url("/src/img/background-footer.svg");
+    -webkit-mask-size: cover; mask-size: cover;
+}
+.container__footer{
+    display: flex; flex-wrap: wrap;
+    justify-content: space-around; max-width: 1200px;
+    margin: auto; margin-top: 100px;
+}
+.box__footer{
+    display: flex; flex-direction: column; padding: 40px;
+}
+.box__footer .logo img{
+    width: 12pc;
+}
+.box__footer h2{
+    margin-bottom: 20px; color: #343434; font-weight: 700;
+}
+.box__footer a:hover{
+    opacity: 0.8;
+}
+.box__footer a .fab{
+    font-size: 20px;
+}
+.box__copyright{
+    max-width: 1200px; margin: auto; text-align: center; padding: 0px 40px;
+}
+.box__copyright p{
+    margin-top: 20px; color: #7a7a7a;
+}
+.box__copyright hr{
+    border: none; height:  1px; background-color: #7a7a7a;
+}
