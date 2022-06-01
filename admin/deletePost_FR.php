@@ -9,7 +9,7 @@
     	$borrar = mysqli_query($mysqli, "DELETE FROM publicaciones_fr WHERE id_publicacion = '$idPub'");
 
     	if($borrar){
-    		header("Location: controlPublicaciones_fr.php");
+    		header("Location: controlPublicaciones_FR.php");
     	}else{
     		echo "Error";
     	}

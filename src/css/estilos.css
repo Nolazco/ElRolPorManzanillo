@@ -263,3 +263,16 @@ footer{
 .box__copyright hr{
     border: none; height:  1px; background-color: #7a7a7a;
 }
+
+.contenedorPost{
+    background: #EBE5DC;
+    width: 100%;
+    border: 5px solid #EBE5DC;
+    padding: 15px;
+}
+
+.contenedorComentarios{
+    border: 5px solid #CDC2AE;
+    padding: 15px;
+    background: #EFEAD8;
+}

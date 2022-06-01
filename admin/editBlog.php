@@ -40,7 +40,17 @@
                             <option value="opt0" selected disabled>Ingrese la categoria del post</option>
                             <option value="opt1">Lugar turistico</option>
                             <option value="opt2">Gastronomia</option>
-                        </select><br>
+                        </select>
+                        <br>
+                        <select class="form-select form-select-sm" name="rating">
+                            <option value="0" selected disabled>Ingrese el rating del post</option>
+                            <option value="1">1 estrella</option>
+                            <option value="2">2 estrellas</option>
+                            <option value="3">3 estrellas</option>
+                            <option value="4">4 estrellas</option>
+                            <option value="5">5 estrellas</option>
+                        </select>
+                        <br>
                         Resumen del post:<br>
                         <textarea class="form-control" required id="resumen" name ="resumen" style="height: 50px;"><?= $publicacion['resumen_blog'] ?></textarea><br>
                         Contenido del post:<br> 

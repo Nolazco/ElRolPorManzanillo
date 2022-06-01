@@ -21,12 +21,13 @@ $guardar_img = $_FILES['imagen']['tmp_name'];
 //obtenemos la fecha actual
 $fecha = date('Y-m-d');
 $res =  $_POST['resumen'];
+$rating = $_POST['rating'];
 
 //llamamos a la conexion de base datos
 include('../paginas/conexion.php');
 
 //Generamos una insercion
-if (!$mysqli->query("INSERT INTO `publicaciones_al` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`,`autor_blog`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res', '$nombre')")) {
+if (!$mysqli->query("INSERT INTO `publicaciones_al` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`,`autor_blog`,`rating`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res', '$nombre','$rating')")) {
     
     echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
     header("Location: controlPublicaciones_al.php");

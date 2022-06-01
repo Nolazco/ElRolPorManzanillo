@@ -7,14 +7,19 @@
 
     include('conexion.php'); //Hacemos la consulta de nuestro codigo sql 
     $obtencion = "SELECT * FROM publicaciones_en WHERE id_publicacion = '$id'";
-    $obtencion2 = "SELECT * FROM publicaciones_en WHERE id_publicacion != '$id' and categoria = 'opt1'";
+    $obtencion2 = "SELECT * FROM publicaciones_en WHERE id_publicacion != '$id' and categoria = 'opt1' LIMIT 5";
+    $obtencion_comen = "SELECT * FROM comentarios_en WHERE id_pub = '$id'";
     $resultado = mysqli_query($mysqli,$obtencion);
-    $resultado2 = mysqli_query($mysqli,$obtencion2);    
+    $resultado2 = mysqli_query($mysqli,$obtencion2);
+    $resultado_comen = mysqli_query($mysqli,$obtencion_comen);
     $publicaciones = $resultado->fetch_all(MYSQLI_ASSOC);
     $publicaciones2 = $resultado2->fetch_all(MYSQLI_ASSOC);
+    $comentariosN = $resultado_comen->fetch_all(MYSQLI_ASSOC);
+    $comentarios = array_reverse($comentariosN);
     $res = mysqli_query($mysqli,$obtencion);
     $consulta = mysqli_fetch_array($res);
     $titulo = $consulta['title'];
+    $id_pub = $consulta['id_publicacion'];
 
     $id_pagina = 2;
 ?>
@@ -47,16 +52,42 @@
         <main class="container">
             <div class="row g-0">
                 <div class="col-md-8" style="text-align: justify;">
-                    <div class="rounded-3" style="background: #EBE5DC; width: 100%; border: 5px solid #F2D2A2; padding: 15px;">
+                    <div class="rounded-3 contenedorPost">
                         <?php foreach($publicaciones as $publicacion): ?>
                             <h1 class="text-center"><?= $publicacion['title'] ?></h1>
                             <h4>Author: <?= $publicacion['autor_blog'] ?></h4>
                             <h4><?= $publicacion['date_created'] ?></h4>
-                            <div>
-                                <p style="display: inline; display: inline; word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;"><?= $publicacion['inf_blog'] ?></p>                                
+                            <div style="clear: both;overflow: hidden;">
+                                <p style="display: inline; display: inline; word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;"><?= $publicacion['inf_blog'] ?></p>
+                                <h3>
+                                    Rating: <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
+                                </h3>
                             </div>
                         <?php endforeach ?>
-                    </div>                
+                    </div>
+                    <div class="mt-3 rounded-3 contenedorComentarios">
+                        <h3 class="text-center">Comments</h3>
+                        <?php foreach($comentarios as $comentario): ?>
+                            <div class="mt-3" style="border: 1px solid black; padding: 4px;">
+                                <h5>
+                                    <i class="bi bi-person-circle"></i> <?= $comentario['autor_comentario'] ?>
+                                    <?php if(($_SESSION['nameR_user'] == $comentario['autor_comentario']) or ($_SESSION['tipo_user'] == 1)){ ?>
+                                        <a href="eliminarComentario.php?id=<?php echo $comentario['id_comentario'];?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <?php }?>
+                                </h5>
+                                <p><?= $comentario['fecha_comentario'] ?></p>
+                                <p><?= $comentario['comentario'] ?></p>
+                            </div>
+                        <?php endforeach ?>
+                        <?php if(isset($_SESSION['nameR_user'])): ?>
+                            <form class="mt-3" action="procesarComentario.php?id=<?php echo $id_pub; ?>" method="POST">
+                                <textarea class="form-control" style="height: 100px;" name="comentario" placeholder="Comment..."></textarea>
+                                <input class="btn btn-secondary mt-2" type="submit" value="Comment">
+                            </form>
+                        <?php else: ?>
+                            <a href="login.php" style="cursor: pointer;"><textarea class="form-control mt-3" disabled style="height: 100px; cursor: pointer;" name="comentario" placeholder="Login to comment"></textarea></a>
+                        <?php endif ?>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div>

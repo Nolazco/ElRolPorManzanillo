@@ -53,8 +53,12 @@
                             <h1 class="text-center"><?= $publicacion['title'] ?></h1>
                             <h4>Autor: <?= $publicacion['autor_blog'] ?></h4>
                             <h4><?= $publicacion['date_created'] ?></h4>
-                            <div>
-                                <p style="display: inline; display: inline; word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;"><?= $publicacion['inf_blog'] ?></p>                                
+                            <div style="clear: both;overflow: hidden;">
+                                <img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;">
+                                <p style="word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><?= $publicacion['inf_blog'] ?></p>
+                                <h3>
+                                    Rating: <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
+                                </h3>
                             </div>
                         <?php endforeach ?>
                     </div>                

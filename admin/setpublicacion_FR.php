@@ -26,7 +26,7 @@ $res =  $_POST['resumen'];
 include('../paginas/conexion.php');
 
 //Generamos una insercion
-if (!$mysqli->query("INSERT INTO `publicaciones_fr` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`,`autor_blog`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res', '$nombre')")) {
+if (!$mysqli->query("INSERT INTO `publicaciones_fr` (`title`,`categoria`,`inf_blog`,`img_blog`,`date_created`, `resumen_blog`,`autor_blog`,`rating`) VALUES ('$titulo', '$categoria','$inf','$name_img','$fecha', '$res', '$nombre','$rating')")) {
     
     echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
     header("Location: controlPublicaciones_FR.php");

@@ -25,9 +25,10 @@ $guardar_img = $_FILES['imagen']['tmp_name'];
 //obtenemos la fecha actual
 $fecha = date('Y-m-d');
 $res = $_POST['resumen'];
+$rating = $_POST['rating'];
 
 //Generamos una insercion
-if (!$mysqli->query("UPDATE publicaciones_al SET title = '$titulo', categoria = '$categoria', inf_blog = '$inf', img_blog = '$name_img', date_created = '$fecha', resumen_blog = '$res', autor_blog = '$nombre' WHERE id_publicacion = '$id'")) {
+if (!$mysqli->query("UPDATE publicaciones_al SET title = '$titulo', categoria = '$categoria', inf_blog = '$inf', img_blog = '$name_img', date_created = '$fecha', resumen_blog = '$res', autor_blog = '$nombre', rating = '$rating' WHERE id_publicacion = '$id'")) {
 
         echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
         header("Location: controlPublicaciones_AL.php");

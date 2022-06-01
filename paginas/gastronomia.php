@@ -39,26 +39,32 @@
         <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-4.79,14.31 C163.37,158.39 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f7f2eb;"></path></svg></div>
     </header>
     <main>
-          <?php foreach($publicaciones as $publicacion): ?>
+      <?php foreach($publicaciones as $publicacion): ?>
         <div class="container-sm" style="width: 70%;">
           <div class="card mb-3 p-1 text-dark bg-opacity-25" style="background: #EBE5DC;">
             <div class="row g-0">
               <div class="col-md-6 text-center">
                 <img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 14pc;">
               </div>
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title text-center" style="color: #83C976; font-weight: bold;"><?= $publicacion['title'] ?></h5>
-                <p class="card-text">Autor: <?= $publicacion['autor_blog'] ?></p>
-                <p class="card-text"><?= $publicacion['resumen_blog'] ?></p>
-                <p class="card-text"><small><?= $publicacion['date_created'] ?></small></p>
-                <center><a class="btn btn-outline-dark" href="gastronomiaPost.php?id=<?php echo $publicacion['id_publicacion'];?>" role="button"><i class="bi bi-info-circle"></i> Ver más...</a></center>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title text-center" style="color: #83C976; font-weight: bold;"><?= $publicacion['title'] ?></h5>
+                  <center>
+                    <p class="card-text">
+                      <?= $publicacion['date_created'] ?>
+                      <br>
+                      <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
+                    </p>
+                    <p class="card-text"><?= $publicacion['resumen_blog'] ?></p>
+                    <p class="card-text">Autor: <?= $publicacion['autor_blog'] ?></p>
+                    <a class="btn btn-outline-dark" href="gastronomiaPost.php?id=<?php echo $publicacion['id_publicacion'];?>" role="button"><i class="bi bi-info-circle"></i> Ver más...</a>
+                  </center>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
-  <?php endforeach ?>
+      <?php endforeach ?>
     </main>
     
     <script src="/src/js/bootstrap.bundle.min.js"></script>

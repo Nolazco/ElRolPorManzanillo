@@ -21,7 +21,7 @@
     $nombre = $_SESSION['nameR_user'];
     $id = $_REQUEST['id'];
 
-    $obtencion = "SELECT * FROM publicaciones_AL WHERE id_publicacion = '$id'";
+    $obtencion = "SELECT * FROM publicaciones_al WHERE id_publicacion = '$id'";
     $resultado = mysqli_query($mysqli,$obtencion);
     $publicaciones = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>

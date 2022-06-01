@@ -49,10 +49,16 @@
             <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title text-center" style="color: #83C976; font-weight: bold;"><?= $publicacion['title'] ?></h5>
-                <p class="card-text">Autor: <?= $publicacion['autor_blog'] ?></p>
-                <p class="card-text"><?= $publicacion['resumen_blog'] ?></p>
-                <p class="card-text"><small><?= $publicacion['date_created'] ?></small></p>
-                <center><a class="btn btn-outline-dark" href="gastronomiaPost.php?id=<?php echo $publicacion['id_publicacion'];?>" role="button"><i class="bi bi-info-circle"></i> Mehr sehen...</a></center>
+                <center>
+                  <p class="card-text">
+                    <?= $publicacion['date_created'] ?>
+                    <br>
+                    <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
+                  </p>
+                  <p class="card-text"><?= $publicacion['resumen_blog'] ?></p>
+                  <p class="card-text">Autor: <?= $publicacion['autor_blog'] ?></p>
+                  <a class="btn btn-outline-dark" href="gastronomiaPost.php?id=<?php echo $publicacion['id_publicacion'];?>" role="button"><i class="bi bi-info-circle"></i> Mehr sehen...</a>
+                </center>
               </div>
             </div>
             </div>

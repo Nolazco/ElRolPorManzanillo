@@ -27,11 +27,9 @@
         if (!$mysqli->query("INSERT INTO `datos_user` (`nameR_user`,`correo_user`,`telefono_user`,`passw_user`, `tipo_user`) VALUES ('$userR','$correoR','$telefonoR','$contraseñaful', '1')")){
             echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
         }else{
-            echo "<br/>"; echo "Registro agregado correctamente";
-            header("Location: /index.php");
+            echo '<script language="javascript">alert("Registro agregado correctamente");window.location.href="controlUsuarios.php"</script>';
         }
     }else{
-    echo "ingresastes un usuario existente";
-    header("Location: register.php");
+        echo '<script language="javascript">alert("Ingresaste un usuario existente");window.location.href="registerAdmin.php"</script>';
     }
 ?>

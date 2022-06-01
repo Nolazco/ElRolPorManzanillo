@@ -7,14 +7,19 @@
 
     include('conexion.php'); //Hacemos la consulta de nuestro codigo sql 
     $obtencion = "SELECT * FROM publicaciones WHERE id_publicacion = '$id'";
-    $obtencion2 = "SELECT * FROM publicaciones WHERE id_publicacion != '$id' and categoria = 'opt2'";
+    $obtencion2 = "SELECT * FROM publicaciones WHERE id_publicacion != '$id' and categoria = 'opt2' LIMIT 5";
+    $obtencion_comen = "SELECT * FROM comentarios WHERE id_pub = '$id'";
     $resultado = mysqli_query($mysqli,$obtencion);
-    $resultado2 = mysqli_query($mysqli,$obtencion2);    
+    $resultado2 = mysqli_query($mysqli,$obtencion2);
+    $resultado_comen = mysqli_query($mysqli,$obtencion_comen);
     $publicaciones = $resultado->fetch_all(MYSQLI_ASSOC);
     $publicaciones2 = $resultado2->fetch_all(MYSQLI_ASSOC);
+    $comentariosN = $resultado_comen->fetch_all(MYSQLI_ASSOC);
+    $comentarios = array_reverse($comentariosN);
     $res = mysqli_query($mysqli,$obtencion);
     $consulta = mysqli_fetch_array($res);
     $titulo = $consulta['title'];
+    $id_pub = $consulta['id_publicacion'];
 
     $id_pagina = 1;
 ?>
@@ -35,10 +40,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
 </head>
 <body id="page-top">
-    <header class="turismo">
+    <header class="gastronomia">
         <?php include('../plantillas/header.php'); ?>
         <section class="textos-header">
-            <h1> Gastronomia</h1><br>
+            <h1> Gastronomía</h1><br>
             <img src="/src/img/logo.png" style="width: 12pc;"><br>
             <h2> Conoce más acerca de los lugares que puedes visitar</h2>
         </section>
@@ -47,23 +52,48 @@
         <main class="container">
             <div class="row g-0">
                 <div class="col-md-8" style="text-align: justify;">
-                    <div class="rounded-3" style="background: #EBE5DC; width: 100%; border: 5px solid #F2D2A2; padding: 15px;">
+                    <div class="rounded-3 contenedorPost">
                         <?php foreach($publicaciones as $publicacion): ?>
-                            <h1 class="text-center"><?= $publicacion['title'] ?></h1>
+                            <h1 class="text-center" style="color: #5D8233;"><?= $publicacion['title'] ?></h1>
                             <h4>Autor: <?= $publicacion['autor_blog'] ?></h4>
                             <h4><?= $publicacion['date_created'] ?></h4>
-
-                            <div>
+                            <div style="clear: both;overflow: hidden;">
                                 <img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;">
-                                <p style="word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><?= $publicacion['inf_blog'] ?></p>                                
+                                <p style="word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><?= $publicacion['inf_blog'] ?></p>
+                                <h3>
+                                    Rating: <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
+                                </h3>
                             </div>
                         <?php endforeach ?>
-                    </div>                
+                    </div>
+                    <div class="mt-3 rounded-3 contenedorComentarios">
+                        <h3 class="text-center">Comentarios</h3>
+                        <?php foreach($comentarios as $comentario): ?>
+                            <div class="mt-3" style="border: 1px solid black; padding: 4px;">
+                                <h5>
+                                    <i class="bi bi-person-circle"></i> <?= $comentario['autor_comentario'] ?>
+                                    <?php if(($_SESSION['nameR_user'] == $comentario['autor_comentario']) or ($_SESSION['tipo_user'] == 1)){ ?>
+                                        <a href="eliminarComentario.php?id=<?php echo $comentario['id_comentario'];?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <?php }?>
+                                </h5>
+                                <p><?= $comentario['fecha_comentario'] ?></p>
+                                <p><?= $comentario['comentario'] ?></p>                                
+                            </div>
+                        <?php endforeach ?>
+                        <?php if(isset($_SESSION['nameR_user'])): ?>
+                            <form class="mt-3" action="procesarComentario.php?id=<?php echo $id_pub; ?>" method="POST">
+                                <textarea class="form-control" style="height: 100px;" name="comentario" placeholder="Comentario..."></textarea>
+                                <input class="btn btn-secondary mt-2" type="submit" value="Comentar">
+                            </form>
+                        <?php else: ?>
+                            <a href="login.php" style="cursor: pointer;"><textarea class="form-control mt-3" disabled style="height: 100px; cursor: pointer;" name="comentario" placeholder="Inicia sesión para comentar"></textarea></a>
+                        <?php endif ?>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div>
                         <center>
-                            <h2 class="text-center">Mas de Gastronomia</h2>
+                            <h2 class="text-center">Más de Gastronomía</h2>
                             <?php foreach($publicaciones2 as $publicacion2): ?>
                                 <div class="card mt-3 p-1 text-dark bg-opacity-25" style="width: 18rem; text-align: left; background: #EBE5DC;">
                                     <img src="/archivos/<?= $publicacion2['img_blog'] ?>" class="card-img-top" alt="...">

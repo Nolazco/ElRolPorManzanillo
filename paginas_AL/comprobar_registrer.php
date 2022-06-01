@@ -27,11 +27,9 @@
         if (!$mysqli->query("INSERT INTO `datos_user` (`nameR_user`,`correo_user`,`telefono_user`,`passw_user`, `tipo_user`) VALUES ('$userR','$correoR','$telefonoR','$contraseñaful', '2')")){
             echo "Inserción fallida: (" . $mysqli->errno . ") " . $mysqli->error;
         }else{
-            echo "<br/>"; echo "Datensatz erfolgreich hinzugefügt";
-            header("Location: /index_AL.php");
+            echo '<script language="javascript">alert("Datensatz erfolgreich hinzugefügt");window.location.href="login.php"</script>';
         }
     }else{
-        echo "Sie haben einen bestehenden Benutzer eingegeben";
-        header("Location: register.php");
+        echo '<script language="javascript">alert("Sie haben einen bestehenden Benutzer eingegeben");window.location.href="register.php"</script>';
     }
 ?>
