@@ -50,12 +50,12 @@ $_SESSION['id'] = $id;
 
                   <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña <i class="bi bi-key-fill"></i>:</label>
-                    <input type="password" class="form-control" name="passw_user">
+                    <input type="password" class="form-control" name="passw_user" required>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label fw-bold">Verificar contraseña <i class="bi bi-key-fill"></i>:</label>
-                    <input type="password" class="form-control" name="passw_user1">
+                    <input type="password" class="form-control" name="passw_user1" required>
                   </div>
 
                   <center>

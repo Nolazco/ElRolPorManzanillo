@@ -43,6 +43,43 @@
     <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/src/css/generales.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script type="text/javascript">
+        function valideKey(evt){
+            
+        // code is the decimal ASCII representation of the pressed key.
+        var code = (evt.which) ? evt.which : evt.keyCode;
+            
+        if(code==8){ // backspace.
+            return true;
+        }else if(code>=48 && code<=57){ // is a number.
+            return true;
+        }else{ // other keys.
+            alert("Geben Sie nur Zahlen ein");
+            return false;
+            }
+        }
+
+        function SoloLetras(e){
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toString();
+            letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚabcdefghijklmnopqrstuvwxyzáéíóú";
+            especiales = [8,13,48,49,50,51,52,53,54,55,56,57];
+            tecla_especial = false
+            for(var i in especiales) {
+                if(key == especiales[i]){
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+        if(letras.indexOf(tecla) == -1 && !tecla_especial){
+            alert("Geben Sie nur Buchstaben und Zahlen ein");
+            return false;
+        }
+    }
+    </script>
+
     <title>Einloggen</title>
 </head>
 <body class="container" style="background-color: #BEE3DF;">
@@ -55,12 +92,12 @@
 
                   <div class="mb-3">
                     <label class="form-label fw-bold">Benutzer <i class="bi bi-person-fill"></i>:</label>
-                    <input type="text" class="form-control" name="name_user">
+                    <input type="text" class="form-control" name="name_user" onkeypress="return SoloLetras(event);" required>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label fw-bold">Passwort <i class="bi bi-key-fill"></i>:</label>
-                    <input type="password" class="form-control" name="passw_user">
+                    <input type="password" class="form-control" name="passw_user" required>
                     <a href="recuperarContraseña.php"><div class="form-text">Haben Sie Ihr Passwort vergessen?</div></a>
                   </div>
 

@@ -12,19 +12,19 @@
         <a href="/paginas/turismo.php">Turismo</a>
 
         <?php if($tipo_usuario == 1){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-robot"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-robot"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/admin/controlPanel.php">Panel de administracion</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/paginas/logout.php">Cerrar sesion</a></li>
             </ul>
         <?php }else if($tipo_usuario == 2){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person-check"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person-check"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas/logout.php">Cerrar sesion</a></li>
             </ul>
         <?php }else{?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas/login.php">Iniciar sesion</a></li>
                 <li><a class="dropdown-item" href="/paginas/register.php">Registrate</a></li>
@@ -44,19 +44,19 @@
         <a href="/paginas_EN/turismo.php">Tourism</a>
 
         <?php if($tipo_usuario == 1){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-robot"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-robot"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/admin/controlPanel.php">Panel de administracion</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/paginas_en/logout.php">Cerrar sesion</a></li>
             </ul>
         <?php }else if($tipo_usuario == 2){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person-check"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person-check"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_en/logout.php">Log out</a></li>
             </ul>
         <?php }else{?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_en/login.php">Log in</a></li>
                 <li><a class="dropdown-item" href="/paginas_en/register.php">Sign in</a></li>
@@ -76,19 +76,19 @@
         <a href="/paginas_AL/turismo.php">Besichtigung</a>
 
         <?php if($tipo_usuario == 1){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-robot"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-robot"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/admin/controlPanel.php">Panel de administracion</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/paginas_AL/logout.php">Cerrar sesion</a></li>
             </ul>
         <?php }else if($tipo_usuario == 2){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person-check"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person-check"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_AL/logout.php">Ausloggen</a></li>
             </ul>
         <?php }else{?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_AL/login.php">Einloggen</a></li>
                 <li><a class="dropdown-item" href="/paginas_AL/register.php">Anmelden</a></li>
@@ -108,19 +108,19 @@
         <a href="/paginas_FR/turismo.php">Touristique</a>
 
         <?php if($tipo_usuario == 1){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-robot"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-robot"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/admin/controlPanel.php">Panel de administracion</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/paginas_FR/logout.php">Cerrar sesion</a></li>
             </ul>
         <?php }else if($tipo_usuario == 2){?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person-check"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person-check"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_FR/logout.php">Fermer la session</a></li>
             </ul>
         <?php }else{?>
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?> <i class="bi bi-person"></i></a>
+            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo htmlspecialchars($nombre); ?> <i class="bi bi-person"></i></a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/paginas_FR/login.php">Commencer la session</a></li>
                 <li><a class="dropdown-item" href="/paginas_FR/register.php">S'inscrire</a></li>

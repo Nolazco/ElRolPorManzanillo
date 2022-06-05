@@ -21,6 +21,7 @@ $guardar_img = $_FILES['imagen']['tmp_name'];
 //obtenemos la fecha actual
 $fecha = date('Y-m-d');
 $res =  $_POST['resumen'];
+$rating = $_POST['rating'];
 
 //llamamos a la conexion de base datos
 include('../paginas/conexion.php');

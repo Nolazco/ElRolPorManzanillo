@@ -29,7 +29,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $titulo?></title>
+    <title><?php echo htmlspecialchars($titulo)?></title>
     <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.min.css">
     <link rel="stylesheet" href="/src/css/sb-admin-2.min.css">
@@ -54,11 +54,11 @@
                 <div class="col-md-8" style="text-align: justify;">
                     <div class="rounded-3 contenedorPost">
                         <?php foreach($publicaciones as $publicacion): ?>
-                            <h1 class="text-center"><?= $publicacion['title'] ?></h1>
-                            <h4>Autor: <?= $publicacion['autor_blog'] ?></h4>
+                            <h1 class="text-center"><?= htmlspecialchars($publicacion['title']) ?></h1>
+                            <h4>Autor: <?= htmlspecialchars($publicacion['autor_blog']) ?></h4>
                             <h4><?= $publicacion['date_created'] ?></h4>
                             <div style="clear: both;overflow: hidden;">
-                                <p style="display: inline; display: inline; word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;"><?= $publicacion['inf_blog'] ?></p>
+                                <p style="display: inline; display: inline; word-break: break-all; word-spacing: normal; white-space: pre-wrap;"><img src='/archivos/<?= $publicacion['img_blog'] ?>' class="img-fluid rounded-start" style="width: 20pc; float: left;"><?= htmlspecialchars($publicacion['inf_blog']) ?></p>
                                 <h3>
                                     Rating: <img style="width: 8pc;" src="../src/img/estrellas_<?=$publicacion['rating']?>.png">
                                 </h3>
@@ -70,13 +70,13 @@
                         <?php foreach($comentarios as $comentario): ?>
                             <div class="mt-3" style="border: 1px solid black; padding: 4px;">
                                 <h5>
-                                    <i class="bi bi-person-circle"></i> <?= $comentario['autor_comentario'] ?>
+                                    <i class="bi bi-person-circle"></i> <?= htmlspecialchars($comentario['autor_comentario']) ?>
                                     <?php if(($_SESSION['nameR_user'] == $comentario['autor_comentario']) or ($_SESSION['tipo_user'] == 1)){ ?>
                                         <a href="eliminarComentario.php?id=<?php echo $comentario['id_comentario'];?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     <?php }?>
                                 </h5>
                                 <p><?= $comentario['fecha_comentario'] ?></p>
-                                <p><?= $comentario['comentario'] ?></p>
+                                <p><?= htmlspecialchars($comentario['comentario']) ?></p>
                             </div>
                         <?php endforeach ?>
                         <?php if(isset($_SESSION['nameR_user'])): ?>
@@ -97,9 +97,9 @@
                                 <div class="card mt-3 p-1 text-dark bg-opacity-25" style="width: 18rem; text-align: left; background: #EBE5DC;">
                                     <img src="/archivos/<?= $publicacion2['img_blog'] ?>" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $publicacion2['title'] ?></h5>
-                                        <p class="card-text">Autor: <?= $publicacion2['autor_blog'] ?></p>
-                                        <p class="card-text"><?= $publicacion2['resumen_blog'] ?>...</p>
+                                        <h5 class="card-title"><?= htmlspecialchars($publicacion2['title']) ?></h5>
+                                        <p class="card-text">Autor: <?= htmlspecialchars($publicacion2['autor_blog']) ?></p>
+                                        <p class="card-text"><?= htmlspecialchars($publicacion2['resumen_blog']) ?>...</p>
                                         <p class="card-text"><small><?= $publicacion2['date_created'] ?></small></p>
                                         <center><a class="btn btn-outline-dark" href="turismoPost.php?id=<?php echo $publicacion2['id_publicacion'];?>" role="button"><i class="bi bi-info-circle"></i> Ver más...</a></center>
                                     </div>

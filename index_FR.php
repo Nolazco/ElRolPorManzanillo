@@ -48,7 +48,7 @@
                                     <polyline points="7 7 12 12 7 17"></polyline>
                                     <polyline points="13 7 18 12 13 17"></polyline>
                                     </svg></span> Que pouvez-vous trouver sur notre blog</h3>
-                                <p class="card-text tam-texto" style="text-align: justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum rem dolorem eaque vitae ducimus soluta, vero nam distinctio itaque facilis saepe, maiores ipsa nesciunt nihil libero accusamus autem recusandae repudiandae?</p>
+                                <p class="card-text tam-texto" style="text-align: justify;">Dans ce blog, vous pouvez trouver des avis sur les meilleurs restaurants de Manzanillo, ainsi que sur les lieux touristiques où aller et s'amuser entre amis et en famille.</p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
         <section class="manzanilloo mb-4">
             <center>
             <br><h2 class="titulo"> Manzanillo </h2>
-            <p class="tam-texto-man contenido-textos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, esse eligendi repudiandae alias architecto aliquam nostrum ducimus totam, cum, repellat iusto omnis fugiat qui magnam molestiae facilis provident similique? Fugit!</p>
+            <p class="tam-texto-man contenido-textos">Manzanillo est un port actif et une destination touristique, situé sur la côte de l'océan Pacifique, avec deux baies ; Manzanillo et Santiago.</p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120661.79525223054!2d-104.40546681459023!3d19.077753666163314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8424d43417bb3e19%3A0xddb3e9aae7750d4b!2sManzanillo%2C%20Col.!5e0!3m2!1ses-419!2smx!4v1652303684216!5m2!1ses-419!2smx" 
             width="90%" height="450" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
         </center>

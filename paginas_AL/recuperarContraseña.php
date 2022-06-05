@@ -62,12 +62,12 @@
 
                   <div class="mb-3">
                       <label class="form-label fw-bold">Telefonnummer <i class="bi bi-phone-fill"></i>:</label>
-                      <input type="tel" class="form-control" maxlength="10" name="telefono_user" onkeypress="return valideKey(event);">
+                      <input type="tel" class="form-control" maxlength="10" name="telefono_user" onkeypress="return valideKey(event);" required>
                   </div>
 
                   <div class="mb-3">
                       <label class="form-label fw-bold">Email <i class="bi bi-envelope-fill"></i>:</label>
-                      <input type="email" class="form-control" name="email_user">
+                      <input type="email" class="form-control" name="email_user" required>
                   </div>
 
                   <center>

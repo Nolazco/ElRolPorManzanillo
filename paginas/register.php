@@ -62,17 +62,17 @@
 
                   <div class="mb-3">
                       <label class="form-label fw-bold">Telefono <i class="bi bi-phone-fill"></i>:</label>
-                      <input type="tel" class="form-control" maxlength="10" name="telefonoR_user" onkeypress="return valideKey(event);">
+                      <input type="tel" class="form-control" maxlength="10" name="telefonoR_user" onkeypress="return valideKey(event);" required>
                   </div>
 
                   <div class="mb-3">
                       <label class="form-label fw-bold">Correo electronico <i class="bi bi-envelope-fill"></i>:</label>
-                      <input type="email" class="form-control" name="correoR_user">
+                      <input type="email" class="form-control" name="correoR_user" required>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label fw-bold">Contraseña <i class="bi bi-key-fill"></i>:</label>
-                    <input type="password" class="form-control" name="passwR_user">
+                    <input type="password" class="form-control" name="passwR_user" required>
                     <a href="recuperarContraseña.php"><div class="form-text">¿Olvidaste tu contraseña?</div></a>
                   </div>
 

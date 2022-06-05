@@ -70,13 +70,13 @@
                         <?php foreach($comentarios as $comentario): ?>
                             <div class="mt-3" style="border: 1px solid black; padding: 4px;">
                                 <h5>
-                                    <i class="bi bi-person-circle"></i> <?= $comentario['autor_comentario'] ?>
+                                    <i class="bi bi-person-circle"></i> <?= htmlspecialchars($comentario['autor_comentario']) ?>
                                     <?php if(($_SESSION['nameR_user'] == $comentario['autor_comentario']) or ($_SESSION['tipo_user'] == 1)){ ?>
                                         <a href="eliminarComentario.php?id=<?php echo $comentario['id_comentario'];?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                     <?php }?>
                                 </h5>
                                 <p><?= $comentario['fecha_comentario'] ?></p>
-                                <p><?= $comentario['comentario'] ?></p>                                
+                                <p><?= htmlspecialchars($comentario['comentario']) ?></p>                                
                             </div>
                         <?php endforeach ?>
                         <?php if(isset($_SESSION['nameR_user'])): ?>
