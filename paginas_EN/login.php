@@ -23,7 +23,7 @@
                 $_SESSION['nameR_user'] = $row['nameR_user'];
                 $_SESSION['tipo_user'] = $row['tipo_user'];
 
-                header("Location: /index.php");
+                header("Location: /index_EN.php");
             }else{
                 echo "Wrong password";
             }
